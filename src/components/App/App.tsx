@@ -90,7 +90,7 @@ export default function App() {
       {photos.length > 0 && (
         <ImageGallery items={photos} onOpenModal={afterOpenModal} />
       )}
-      {isLoading && <Loader isLoading={isLoading}/>}
+      {isLoading && <Loader/>}
       {photos.length > 0 && photos.length > 14 && !isLoading && (
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
