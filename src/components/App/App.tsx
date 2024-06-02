@@ -69,7 +69,7 @@ export default function App() {
     setIsOpen(true);
   };
 
-  const afterOpenModal = (photo: Photo):void => {
+  const afterOpenModal = (photo: Photo):void  => {
     setSelectedPhoto({
       url: photo.urls.regular,
       description: photo.alt_description,
@@ -90,7 +90,7 @@ export default function App() {
       {photos.length > 0 && (
         <ImageGallery items={photos} onOpenModal={afterOpenModal} />
       )}
-      {isLoading && <Loader />}
+      {isLoading && <Loader isLoading={isLoading}/>}
       {photos.length > 0 && photos.length > 14 && !isLoading && (
         <LoadMoreBtn onClick={handleLoadMore} />
       )}

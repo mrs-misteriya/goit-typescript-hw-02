@@ -1,11 +1,16 @@
+import React from "react";
 import css from "./Loader.module.css";
 import { RotatingLines } from "react-loader-spinner";
 
-export default function Loader() {
+interface LoaderProps {
+  isLoading: boolean;
+}
+
+ const Loader: React.FC<LoaderProps> = ({ isLoading }) =>{
   return (
     <div className={css.loader}>
       <RotatingLines
-        visible={true}
+        visible={isLoading }
         height="60"
         width="60"
         strokeColor="#1B5299"
@@ -18,3 +23,6 @@ export default function Loader() {
     </div>
   );
 }
+
+export default Loader;
+
